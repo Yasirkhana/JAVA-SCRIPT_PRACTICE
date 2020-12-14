@@ -18,8 +18,8 @@ jobs:
         run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
       - name: install yarn
         run: sudo apt update && sudo apt install yarn
-      - name: updating yarn
-        run: curl --compressed -o- -L https://yarnpkg.com/install.sh | bash  
+      - name: updating script yarn
+        run: npm install react-scripts -g --silent 
       - name: Build React App
         run: yarn build
       - name: Install Surge
