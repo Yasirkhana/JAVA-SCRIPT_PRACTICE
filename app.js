@@ -126,3 +126,67 @@ function numberToChoice(number){
     return ['rock','paper','scissor'][number];
 }
 
+/*  ######################################## CHALLENGE 4 #################################### */ 
+var allButtons = document.getElementsByTagName('button');
+
+
+var copyAllbtns = [];
+for (let i=0;i<allButtons.length;i++){
+    copyAllbtns.push(allButtons[i].classList[1]);
+    
+}
+
+function btnColorChange(btnThink){
+  if (btnThink.value == 'red' ){
+    buttonRed();
+  } 
+  else if (btnThink.value == 'green'){
+      buttonGreen();
+  }
+  
+  else if (btnThink.value == 'reset'){
+    buttonReset();
+}
+
+else if (btnThink.value == 'random'){
+    randomColors();
+}
+}
+function buttonRed(){
+    for(let i=0 ; i< allButtons.length ; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-danger');
+
+    }
+}
+function buttonGreen(){
+    for(let i=0 ; i< allButtons.length ; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-success');
+
+    }
+}
+
+function buttonReset(){
+    for(let i=0 ; i< allButtons.length ; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(copyAllbtns[i]);
+
+    }
+}
+
+function randomColors(){
+    var choices = ['btn-primary','btn-danger','btn-success','btn-warning'];
+    for ( let i=0;i<allButtons.length;i++)
+    {
+        var randomNumb =Math.floor(Math.random()*4);
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(copyAllbtns[randomNumb]);
+    }
+    }
+
+ 
+
+
+
+

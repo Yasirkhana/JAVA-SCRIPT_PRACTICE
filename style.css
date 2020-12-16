@@ -16,10 +16,17 @@
         width: 1000px;
         margin: auto;
     }
-.c1_Btn{
-    border: 2px solid crimson;
+    .c1_Btn{
+        border: 2px solid hotpink;
+        padding: 10px;
+    }
+.c1_Btn button{
+   
+    margin-left: 10px;
+    justify-content: center;
+
 }
-   button{
+   /* button{
        border: 2px darkcyan solid ;
        padding: 10px 40px;
        margin: 0 20px 0 20px;
@@ -28,7 +35,7 @@
        background-color: salmon ;
        border-radius: 8px;
        
-   }
+   } */
        /*  ######################################## CHALLENGE 2 #################################### */
 
 .challenge2{
@@ -83,9 +90,22 @@
     
 }
 
-
-
-
+/*  ######################################## CHALLENGE 4 #################################### */ 
+.challenge-4{
+    border:4px black solid ;
+    width: 1000px;
+    margin: auto;
+}
+.flexBox-pickColor{
+    display: flex;
+    border: 2px solid steelblue;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+.flexBox-pickColor button{
+    margin-left: 90px ;
+}
 
 
 

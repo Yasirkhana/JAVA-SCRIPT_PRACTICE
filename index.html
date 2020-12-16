@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>JS PRACTICE</title>
 </head>
@@ -15,14 +16,14 @@
         <h2 id="daywaliage"> ------- </h2>
 
         <div class="c1_Btn">
-            <button onclick="ageinday()">CLICK ME</button>
-            <button onclick="clearit()">RESET</button>
+            <button onclick="ageinday()" class="btn btn-primary">CLICK ME</button>
+            <button onclick="clearit()" class="btn btn-success">RESET</button>
         </div>
     </div>
     <!-- /*  ######################################## CHALLENGE 2 #################################### */ -->
     <div class="challenge2">
         <h2>CHALLENEGE 2 : CAT GENETERATOR</h2>
-        <button id="catGenerator" onclick="generateCat()" >GENERTE CATS</button>
+        <button id="catGenerator" class="btn btn-warning" onclick="generateCat()" >GENERTE CATS</button>
     
     <div class="flex-box-c2" id="flex-cat-gen">
     
@@ -39,6 +40,34 @@
             <img src="assets/SCISSOR.png" id="scissor" alt="scissor" onclick="rpsGame(this)"> 
         </div>
     </div>
+
+<!-- 
+    /*  ######################################## CHALLENGE 4 #################################### */ -->
+    <div class="challenge-4">
+        <h2 id="changemyColor">CHALLENGE 4 : BUTTONS COLOR CHARGER</h2>
+        <div class="flexBox-pickColor">
+            <form action="">
+                <select name="backdrop" id="background" onchange="btnColorChange(this)"> 
+                <option value="random">Random</option>    
+                <option value="red">Red</option>    
+                <option value="green">Green</option>    
+                <option value="reset">Reset</option>    
+            </select>
+            </form>
+            <button class="btn btn-primary">WEE!!</button>
+            <button class="btn btn-warning">YAHOO!!</button>
+            <button class="btn btn-success">GOOGLE!!</button>
+            <button class="btn btn-danger">FACEBOOK!!</button>
+            
+        </div>
+        </div>
+
+
+
+
+
+
+
 
 </div>
 </div>
