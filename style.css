@@ -13,7 +13,7 @@
         }
     .challenge1{
         border:4px black solid ;
-        width: 1000px;
+        width: 75%;
         margin: auto;
     }
     .c1_Btn{
@@ -40,7 +40,7 @@
 
 .challenge2{
     border:4px black solid ;
-    width: 1000px;
+    width: 75%;
     margin: auto;
 }
 
@@ -65,7 +65,7 @@
 
 .challenge-3{
     border:4px black solid ;
-    width: 1000px;
+    width: 75%;
     margin: auto;
 }
 
@@ -93,7 +93,7 @@
 /*  ######################################## CHALLENGE 4 #################################### */ 
 .challenge-4{
     border:4px black solid ;
-    width: 1000px;
+    width: 75%;
     margin: auto;
 }
 .flexBox-pickColor{
@@ -108,8 +108,41 @@
 }
   /*  ######################################## CHALLENGE 5 #################################### */
 .challenge-5{
-    border:4px black solid ;
-    width: 1000px;
+    border:1px black solid ;
+    width: 75%;
     margin: auto;
 }
 
+.flex-blackjack-row-1 ,.flex-blackjack-row-3 {
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-around;
+}
+.flex-blackjack-row-2{
+    border: 1px dotted black;
+    display: flex;
+    flex-wrap: wrap;
+    
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+.flex-blackjack-row-1 , .flex-blackjack-row-2 , .challenge-5 {
+    color: white;
+ background: url(    https://image.freepik.com/free-vector/poker-table-background-green-color_47243-1068.jpg) ;
+}
+
+.yourBox , .dealerBox{
+    border: 1px solid black;
+    height: 360px;
+    flex: 1;
+}
+table tr th {
+    border: 1px solid white;
+    padding: 5px;
+}
