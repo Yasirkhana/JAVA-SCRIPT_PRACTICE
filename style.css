@@ -106,6 +106,10 @@
 .flexBox-pickColor button{
     margin-left: 90px ;
 }
-
-
+  /*  ######################################## CHALLENGE 5 #################################### */
+.challenge-5{
+    border:4px black solid ;
+    width: 1000px;
+    margin: auto;
+}
 
