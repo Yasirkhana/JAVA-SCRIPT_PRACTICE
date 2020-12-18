@@ -146,3 +146,10 @@ table tr th {
     border: 1px solid white;
     padding: 5px;
 }
+.yourBox img , .dealerBox img{
+    width: 80px;
+    margin-left: 5px;
+    height: 100px;
+}
+/* 
+// ######################## 6.02 ##################################### */

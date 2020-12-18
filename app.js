@@ -186,8 +186,50 @@ function randomColors(){
     }
 
    /*  ######################################## CHALLENGE 5 #################################### */
+    let blackjackGame = {
+        'you' : {'scoreSpan': '#yourResult', 'div' : '#yourBox' , 'score' : 0},
+        'dealer' : {'scoreSpan': '#dealerResult', 'div' : '#dealerBox' , 'score' : 0},
+        'cards' : ['2','3','4','5','6','7','8','9','10','k','Q','J','A' ],
+        };
+    const YOU = blackjackGame['you'];
+    const DEALER = blackjackGame['dealer'];
+
+    const hitSound = new Audio ('sounds/swish.m4a');
 
 
 
+    document.querySelector('#hitBtn').addEventListener('click', blackjackHit);
+    document.querySelector('#dealBtn').addEventListener('click', blackjackDeal);
 
+   function blackjackHit(){
+       let card = randomCard();
+       console.log(card);
+    showCard(YOU);
 
+       }
+    function blackjackDeal(){
+        showCard(DEALER);
+        let yourImgs = document.querySelector('#yourBox').querySelectorAll('img');
+           let dealerImgs = document.querySelector('#dealerBox').querySelectorAll('img');
+            for (let i=0 ; i<yourImgs.length;i++)
+            {
+                yourImgs[i].remove();
+            } 
+            for (let i=0 ; i<dealerImgs.length;i++)
+            {
+                dealerImgs[i].remove();
+            } 
+        }
+
+    function showCard (activePlayer) {
+        let cardImg = document.createElement('img');
+        cardImg.src = 'images/Q.png';
+        document.querySelector(activePlayer['div']).appendChild(cardImg);
+        hitSound.play();
+    }   
+    funtion randomCard(){
+        let randomIndex = Math.floor(Math.random()*13);
+        return blackjackGame['cards'][randomIndex];
+    }
+
+// ######################## 6.02 #####################################
