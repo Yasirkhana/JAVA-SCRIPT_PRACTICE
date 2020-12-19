@@ -189,13 +189,13 @@ function randomColors(){
     let blackjackGame = {
         'you' : {'scoreSpan': '#yourResult', 'div' : '#yourBox' , 'score' : 0},
         'dealer' : {'scoreSpan': '#dealerResult', 'div' : '#dealerBox' , 'score' : 0},
-        'cards' : ['2','3','4','5','6','7','8','9','10','k','Q','J','A' ],
+        'cards' : ['2','3','4','5','6','7','8','9','10','K','Q','J','A' ],
+        'cardMap' : {'2' : 2 , '3' : 3 , '4' : 4, '5':5 , '6': 6 , '7' : 7 ,'8' : 8 ,'9': 9, '10': 10, 'K': 10,'Q':10,'J':10,'A': [1,11]}, 
         };
     const YOU = blackjackGame['you'];
     const DEALER = blackjackGame['dealer'];
 
     const hitSound = new Audio ('sounds/swish.m4a');
-
 
 
     document.querySelector('#hitBtn').addEventListener('click', blackjackHit);
@@ -204,32 +204,70 @@ function randomColors(){
    function blackjackHit(){
        let card = randomCard();
        console.log(card);
-    showCard(YOU);
-
+         showCard(card, YOU);
+        updateScore(card,YOU);
+        showScore(YOU);
+        console.log(YOU['score']);
        }
     function blackjackDeal(){
-        showCard(DEALER);
+        
         let yourImgs = document.querySelector('#yourBox').querySelectorAll('img');
-           let dealerImgs = document.querySelector('#dealerBox').querySelectorAll('img');
+        let dealerImgs = document.querySelector('#dealerBox').querySelectorAll('img');
             for (let i=0 ; i<yourImgs.length;i++)
             {
                 yourImgs[i].remove();
             } 
-            for (let i=0 ; i<dealerImgs.length;i++)
+            for (let i=0 ; i<dealerImgs.length; i++)
             {
                 dealerImgs[i].remove();
             } 
+
+            YOU['score'] = 0 ;
+            DEALER['score'] = 0 ;
         }
 
-    function showCard (activePlayer) {
-        let cardImg = document.createElement('img');
-        cardImg.src = 'images/Q.png';
-        document.querySelector(activePlayer['div']).appendChild(cardImg);
-        hitSound.play();
-    }   
-    funtion randomCard(){
-        let randomIndex = Math.floor(Math.random()*13);
-        return blackjackGame['cards'][randomIndex];
+        function updateScore(card,activePlayer){
+            if(card == 'A'){
+
+            if(activePlayer['score']+ blackjackGame['cardMap'][card[1] <= 21 ]){
+     
+            }
+          else{
+            activePlayer['score'] += blackjackGame['cardMap'][card][0]; 
+          }
+        }
+          else{
+            activePlayer['score'] += blackjackGame['cardMap'][card];
+            }
+          
+        }
+        
+
+        function showCard (card,activePlayer) {
+            if(activePlayer['score'] <= 21){
+                    let cardImg = document.createElement('img');
+                    cardImg.src = `images/${card}.png`;
+                    document.querySelector(activePlayer['div']).appendChild(cardImg);
+                    hitSound.play();
+            }
+                }   
+
+
+    function randomCard(){
+        let randomIndex = Math.floor(Math.random()*13)
+        return blackjackGame['cards'][randomIndex]
+    }
+    
+    function showScore(activePlayer){
+        if(activePlayer['score'] > 21){  
+            document.querySelector(activePlayer ['scoreSpan']).textContent = 'BUST!!';
+            document.querySelector(activePlayer ['scoreSpan']).style.color = 'red';
+        }
+        else{
+        document.querySelector(activePlayer ['scoreSpan']).textContent = activePlayer['score'];
+        }
     }
 
-// ######################## 6.02 #####################################
+
+
+// ######################## 6.29 #####################################
