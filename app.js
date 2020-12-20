@@ -352,4 +352,4 @@ function randomColors(){
    document.querySelector('#blackjack-result').style.color = messageColor;
     }
 
-// ######################## 6.29 #####################################
+// ######################## 7.01 #####################################
