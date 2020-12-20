@@ -209,23 +209,7 @@ function randomColors(){
         showScore(YOU);
         console.log(YOU['score']);
        }
-    function blackjackDeal(){
-        
-        let yourImgs = document.querySelector('#yourBox').querySelectorAll('img');
-        let dealerImgs = document.querySelector('#dealerBox').querySelectorAll('img');
-            for (let i=0 ; i<yourImgs.length;i++)
-            {
-                yourImgs[i].remove();
-            } 
-            for (let i=0 ; i<dealerImgs.length; i++)
-            {
-                dealerImgs[i].remove();
-            } 
-
-            YOU['score'] = 0 ;
-            DEALER['score'] = 0 ;
-        }
-
+    
         function updateScore(card,activePlayer){
             if(card == 'A'){
 
@@ -241,7 +225,28 @@ function randomColors(){
             }
           
         }
+       
+        function blackjackDeal(){
         
+            let yourImgs = document.querySelector('#yourBox').querySelectorAll('img');
+            let dealerImgs = document.querySelector('#dealerBox').querySelectorAll('img');
+                for (let i=0 ; i<yourImgs.length;i++)
+                {
+                    yourImgs[i].remove();
+                } 
+                for (let i=0 ; i<dealerImgs.length; i++)
+                {
+                    dealerImgs[i].remove();
+                } 
+    
+                YOU['score'] = 0 ;
+                DEALER['score'] = 0 ;
+
+                document.querySelector('#yourResult').textContent = 0;
+                document.querySelector('#dealerResult').textContent = 0;
+                document.querySelector('#yourResult').style.color = 'white';
+            }
+    
 
         function showCard (card,activePlayer) {
             if(activePlayer['score'] <= 21){
